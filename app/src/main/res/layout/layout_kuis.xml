@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".kuiskosakata.KuisKosakata">
+
+  <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginTop="15dp"
+          android:layout_marginBottom="15dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:background="@drawable/bg_view"
+          android:orientation="vertical">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="50dp">
+              <TextView
+                  android:gravity="center"
+                  android:layout_width="match_parent"
+                  android:layout_height ="wrap_content"
+                  android:textStyle="bold"
+                  android:textSize="30dp"
+                  android:text="Pilih Quis Bahasa Jepang"
+                  android:textColor="@color/white">
+              </TextView>
+
+          </LinearLayout>
+          <TextView
+              android:gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:textSize="35dp"
+              android:text=""
+              android:textColor="@color/white">
+          </TextView>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/kata_benda"
+                  android:layout_marginTop="40dp"
+                  android:layout_width="120dp"
+                  android:layout_height="120dp"
+                  android:layout_gravity="center"
+                  app:cardCornerRadius="10dp"
+                  >
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="90dp"
+                      android:layout_marginLeft="10dp"
+                      android:text="Quiz Kata Benda"></TextView>
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+
+                      <ImageView
+                          android:layout_marginBottom="30dp"
+                          android:layout_marginLeft="20dp"
+                          android:layout_marginRight="20dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:src="@mipmap/bg_quiz_foreground">
+                      </ImageView>
+
+
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/kata_kerja"
+                  android:layout_marginTop="20dp"
+                  android:layout_width="120dp"
+                  android:layout_height="120dp"
+                  android:layout_gravity="center"
+                  app:cardCornerRadius="10dp"
+                  >
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="90dp"
+                      android:layout_marginLeft="15dp"
+                      android:text="Quiz Kata Kerja"></TextView>
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+                      <ImageView
+                          android:layout_marginBottom="30dp"
+                          android:layout_marginLeft="20dp"
+                          android:layout_marginRight="20dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:src="@mipmap/bg_quiz_foreground">
+                      </ImageView>
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/kata_sifat"
+                  android:layout_marginTop="20dp"
+                  android:layout_width="120dp"
+                  android:layout_height="120dp"
+                  android:layout_gravity="center"
+                  app:cardCornerRadius="10dp"
+                  >
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="90dp"
+                      android:layout_marginLeft="15dp"
+                      android:text="Quiz Kata Sifat"></TextView>
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+                      <ImageView
+                          android:layout_marginBottom="30dp"
+                          android:layout_marginLeft="20dp"
+                          android:layout_marginRight="20dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:src="@mipmap/bg_quiz_foreground">
+                      </ImageView>
+                  </LinearLayout>
+              </androidx.cardview.widget.CardView>
+          </LinearLayout>
+
+      </LinearLayout>
+
+  </androidx.cardview.widget.CardView>
+</LinearLayout>
