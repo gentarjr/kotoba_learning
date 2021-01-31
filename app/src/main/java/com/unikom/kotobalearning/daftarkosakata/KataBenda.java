@@ -95,15 +95,25 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja1 = findViewById(R.id.tv_eja1);
         tvIndo1 = findViewById(R.id.tv_indo1);
         btnFav = findViewById(R.id.btnFav);
+
+        if(db.getDao().getKataBendaByNama(tvIndo1.getText().toString().trim()) == 0){
+            btnFav.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else{
+            btnFav.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo1.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina1.getText().toString(), tvEja1.getText().toString(), tvIndo1.getText().toString(), "R.raw.barang");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav.setBackground(getResources().getDrawable(R.drawable.bintang));
+
             }else{
                 db.getDao().deleteKataBenda(tvIndo1.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -111,15 +121,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja2 = findViewById(R.id.tv_eja2);
         tvIndo2 = findViewById(R.id.tv_indo2);
         btnFav1 = findViewById(R.id.btnFav1);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else{
+            btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav1.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina2.getText().toString(), tvEja2.getText().toString(), tvIndo2.getText().toString(), "R.raw.topi");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo2.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -127,15 +146,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja3 = findViewById(R.id.tv_eja3);
         tvIndo3 = findViewById(R.id.tv_indo3);
         btnFav2 = findViewById(R.id.btnFav2);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else{
+            btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav2.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo3.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina3.getText().toString(), tvEja3.getText().toString(), tvIndo3.getText().toString(), "R.raw.payung");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo3.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -143,15 +171,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja4 = findViewById(R.id.tv_eja4);
         tvIndo4 = findViewById(R.id.tv_indo4);
         btnFav3 = findViewById(R.id.btnFav3);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav3.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav3.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav3.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo4.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina4.getText().toString(), tvEja4.getText().toString(), tvIndo4.getText().toString(), "R.raw.kacamata");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav3.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo4.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav3.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -159,30 +196,50 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja5 = findViewById(R.id.tv_eja5);
         tvIndo5 = findViewById(R.id.tv_indo5);
         btnFav4 = findViewById(R.id.btnFav4);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav4.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav4.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav4.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo5.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina5.getText().toString(), tvEja5.getText().toString(), tvIndo5.getText().toString(), "R.raw.saputangan");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav4.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo5.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav4.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
+
         tvCina6 = findViewById(R.id.tv_cina6);
         tvEja6 = findViewById(R.id.tv_eja6);
         tvIndo6 = findViewById(R.id.tv_indo6);
         btnFav5 = findViewById(R.id.btnFav5);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav5.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav5.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav5.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo6.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina6.getText().toString(), tvEja6.getText().toString(), tvIndo6.getText().toString(), "R.raw.handuk");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav5.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo6.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav5.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+
             }
         });
 
@@ -190,30 +247,49 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja7 = findViewById(R.id.tv_eja7);
         tvIndo7 = findViewById(R.id.tv_indo7);
         btnFav6 = findViewById(R.id.btnFav6);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav6.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav6.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav6.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo7.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina7.getText().toString(), tvEja7.getText().toString(), tvIndo7.getText().toString(), "R.raw.sabun");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav6.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo7.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav6.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
+
         tvCina8 = findViewById(R.id.tv_cina8);
         tvEja8 = findViewById(R.id.tv_eja8);
         tvIndo8 = findViewById(R.id.tv_indo8);
         btnFav7 = findViewById(R.id.btnFav7);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav7.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav7.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav7.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo8.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina8.getText().toString(), tvEja8.getText().toString(), tvIndo8.getText().toString(), "R.raw.shampo");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav7.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo8.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav7.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -221,15 +297,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja9 = findViewById(R.id.tv_eja9);
         tvIndo9 = findViewById(R.id.tv_indo9);
         btnFav8 = findViewById(R.id.btnFav8);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav8.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav8.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav8.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo9.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina9.getText().toString(), tvEja9.getText().toString(), tvIndo9.getText().toString(), "R.raw.dompet");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav8.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo9.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav8.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -237,15 +322,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja10 = findViewById(R.id.tv_eja10);
         tvIndo10 = findViewById(R.id.tv_indo10);
         btnFav9 = findViewById(R.id.btnFav9);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav9.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav9.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav9.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo10.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina10.getText().toString(), tvEja10.getText().toString(), tvIndo10.getText().toString(), "R.raw.uang");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav9.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo10.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav9.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -253,15 +347,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja11 = findViewById(R.id.tv_eja11);
         tvIndo11 = findViewById(R.id.tv_indo11);
         btnFav10 = findViewById(R.id.btnFav10);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav10.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav10.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav10.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo11.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina11.getText().toString(), tvEja11.getText().toString(), tvIndo11.getText().toString(), "R.raw.sandal");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav10.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo11.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav10.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -269,15 +372,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja12 = findViewById(R.id.tv_eja12);
         tvIndo12 = findViewById(R.id.tv_indo12);
         btnFav11 = findViewById(R.id.btnFav11);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav11.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav11.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav11.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo12.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina12.getText().toString(), tvEja12.getText().toString(), tvIndo12.getText().toString(), "R.raw.kaoskaki");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav11.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo12.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav11.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -285,15 +397,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja13 = findViewById(R.id.tv_eja13);
         tvIndo13 = findViewById(R.id.tv_indo13);
         btnFav12 = findViewById(R.id.btnFav12);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav12.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav12.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav12.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo13.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina13.getText().toString(), tvEja13.getText().toString(), tvIndo13.getText().toString(), "R.raw.sepatu");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav12.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo13.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav12.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -301,15 +422,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja14 = findViewById(R.id.tv_eja14);
         tvIndo14 = findViewById(R.id.tv_indo14);
         btnFav13 = findViewById(R.id.btnFav13);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav13.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav13.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav13.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo14.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina14.getText().toString(), tvEja14.getText().toString(), tvIndo14.getText().toString(), "R.raw.barangbawaan");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav13.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo14.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav13.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -317,15 +447,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja15 = findViewById(R.id.tv_eja15);
         tvIndo15 = findViewById(R.id.tv_indo15);
         btnFav14 = findViewById(R.id.btnFav14);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav14.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav14.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav14.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo15.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina15.getText().toString(), tvEja15.getText().toString(), tvIndo15.getText().toString(), "R.raw.tas");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav14.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo15.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav14.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -333,15 +472,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja16 = findViewById(R.id.tv_eja16);
         tvIndo16 = findViewById(R.id.tv_indo16);
         btnFav15 = findViewById(R.id.btnFav15);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav15.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav15.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav15.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo16.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina16.getText().toString(), tvEja16.getText().toString(), tvIndo16.getText().toString(), "R.raw.rokok");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav15.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo16.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav15.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -349,15 +497,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja17 = findViewById(R.id.tv_eja17);
         tvIndo17 = findViewById(R.id.tv_indo17);
         btnFav16 = findViewById(R.id.btnFav16);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav16.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav16.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav16.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo17.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina17.getText().toString(), tvEja17.getText().toString(), tvIndo17.getText().toString(), "R.raw.korekapi");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav16.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo17.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav16.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -365,15 +522,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja18 = findViewById(R.id.tv_eja18);
         tvIndo18 = findViewById(R.id.tv_indo18);
         btnFav17 = findViewById(R.id.btnFav17);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav17.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav17.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav17.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo18.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina18.getText().toString(), tvEja18.getText().toString(), tvIndo18.getText().toString(), "R.raw.obat");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav17.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo18.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav17.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -381,15 +547,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja19 = findViewById(R.id.tv_eja19);
         tvIndo19 = findViewById(R.id.tv_indo19);
         btnFav18 = findViewById(R.id.btnFav18);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav18.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav18.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav18.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo19.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina19.getText().toString(), tvEja19.getText().toString(), tvIndo19.getText().toString(), "R.raw.kunci");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav18.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo19.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav18.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -397,15 +572,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja20 = findViewById(R.id.tv_eja20);
         tvIndo20 = findViewById(R.id.tv_indo20);
         btnFav19 = findViewById(R.id.btnFav19);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav19.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav19.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav19.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo20.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina20.getText().toString(), tvEja20.getText().toString(), tvIndo20.getText().toString(), "R.raw.koran");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav19.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo20.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav19.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
 
@@ -413,15 +597,24 @@ public class KataBenda extends AppCompatActivity implements View.OnClickListener
         tvEja21 = findViewById(R.id.tv_eja21);
         tvIndo21 = findViewById(R.id.tv_indo21);
         btnFav20 = findViewById(R.id.btnFav20);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav20.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav20.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav20.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataBendaByNama(tvIndo21.getText().toString().trim());
             if (jumlah == 0) {
                 KataBendaEntity kataBenda = new KataBendaEntity(0, tvCina21.getText().toString(), tvEja21.getText().toString(), tvIndo21.getText().toString(), "R.raw.majalah");
                 db.getDao().insertKataBenda(kataBenda);
                 Toast.makeText(this, "Kata benda berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav20.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataBenda(tvIndo21.getText().toString().trim());
                 Toast.makeText(this, "Kata benda di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav20.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
     }

@@ -141,45 +141,73 @@ public class KataSifat extends AppCompatActivity implements View.OnClickListener
         tvEja1 = findViewById(R.id.tv_eja1);
         tvIndo1 = findViewById(R.id.tv_indo1);
         btnFav = findViewById(R.id.btnFav);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataSifatByNama(tvIndo1.getText().toString().trim());
             if (jumlah == 0) {
                 KataSifatEntity katasifat = new KataSifatEntity(0, tvCina1.getText().toString(), tvEja1.getText().toString(), tvIndo1.getText().toString(), "R.raw.biru");
                 db.getDao().insertKataSifat(katasifat);
                 Toast.makeText(this, "Kata Sifat berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataSifat(tvIndo1.getText().toString().trim());
                 Toast.makeText(this, "Kata Sifat di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
+
         });
         tvCina2 = findViewById(R.id.tv_cina2);
         tvEja2 = findViewById(R.id.tv_eja2);
         tvIndo2 = findViewById(R.id.tv_indo2);
         btnFav1 = findViewById(R.id.btnFav1);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav1.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataSifatByNama(tvIndo2.getText().toString().trim());
             if (jumlah == 0) {
                 KataSifatEntity katasifat = new KataSifatEntity(0, tvCina2.getText().toString(), tvEja2.getText().toString(), tvIndo2.getText().toString(), "R.raw.bahaya");
                 db.getDao().insertKataSifat(katasifat);
                 Toast.makeText(this, "Kata Sifat berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataSifat(tvIndo2.getText().toString().trim());
                 Toast.makeText(this, "Kata Sifat di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav1.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
         tvCina3 = findViewById(R.id.tv_cina3);
         tvEja3 = findViewById(R.id.tv_eja3);
         tvIndo3 = findViewById(R.id.tv_indo3);
         btnFav2 = findViewById(R.id.btnFav2);
+
+        if(db.getDao().getKataBendaByNama(tvIndo2.getText().toString().trim()) == 0){
+            btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang_border));
+        }else {
+            btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang));
+        }
+
         btnFav2.setOnClickListener(view -> {
             Integer jumlah = db.getDao().getKataSifatByNama(tvIndo3.getText().toString().trim());
             if (jumlah == 0) {
                 KataSifatEntity katasifat = new KataSifatEntity(0, tvCina3.getText().toString(), tvEja3.getText().toString(), tvIndo3.getText().toString(), "R.raw.merah");
                 db.getDao().insertKataSifat(katasifat);
                 Toast.makeText(this, "Kata Sifat berhasil di simpan ke favorite", Toast.LENGTH_SHORT).show();
+                btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang));
             }else{
                 db.getDao().deleteKataSifat(tvIndo3.getText().toString().trim());
                 Toast.makeText(this, "Kata Sifat di hapus pada favorite", Toast.LENGTH_SHORT).show();
+                btnFav2.setBackground(getResources().getDrawable(R.drawable.bintang_border));
             }
         });
         tvCina4 = findViewById(R.id.tv_cina4);
